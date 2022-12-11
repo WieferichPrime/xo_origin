@@ -9,7 +9,7 @@ def training(AI):
     AI_2 = Actor('machine_2')
     AI_2.exp_rate = 0.05
     try:
-        AI_2.load_policy(f'{os.path.dirname(os.path.abspath(__file__))}/policy_first_{AI_2.name}.json', f'policy_second_{AI_2.name}.json')
+        AI_2.load_policy(f'{os.path.dirname(os.path.abspath(__file__))}/policy_first_{AI_2.name}.json', f'{os.path.dirname(os.path.abspath(__file__))}/policy_second_{AI_2.name}.json')
     except BaseException as e:
         print(e)
     game = State(3, 3, AI, AI_2)
@@ -21,7 +21,7 @@ def main():
     human = HumanPlayer('human')
     AI = Actor('machine')
     try:
-        AI.load_policy(f'{os.path.dirname(os.path.abspath(__file__))}/policy_first_{AI.name}.json', f'policy_second_{AI.name}.json')
+        AI.load_policy(f'{os.path.dirname(os.path.abspath(__file__))}/policy_first_{AI.name}.json', f'{os.path.dirname(os.path.abspath(__file__))}/policy_second_{AI.name}.json')
     except BaseException as e:
         print(e)
 
