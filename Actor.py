@@ -1,6 +1,6 @@
 import numpy as np
 import json
-
+import os
 
 class Actor:
     def __init__(self, name, exp_rate=0.3):
@@ -60,9 +60,9 @@ class Actor:
 
 
     def save_policy(self):
-        with open(f"policy_first_{self.name}.json", "w") as write_file:
+        with open(f"{os.path.dirname(os.path.abspath(__file__))}/policy_first_{self.name}.json", "w") as write_file:
             json.dump(self.states_value_first, write_file)
-        with open(f"policy_second_{self.name}.json", "w") as write_file:
+        with open(f"{os.path.dirname(os.path.abspath(__file__))}/policy_second_{self.name}.json", "w") as write_file:
             json.dump(self.states_value_second, write_file)
 
     def load_policy(self, first, sec):
